@@ -3,7 +3,7 @@ name: Docker Build and Publish
 on:
   push:
     branches:
-      - Test1
+      - main
       - 'v*.*.*'
 
 jobs:
