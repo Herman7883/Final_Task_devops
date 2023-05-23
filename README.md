@@ -1,64 +1,11 @@
-# Тестовое приложения для развертывания 
+1) Установите Docker и Docker Compose на вашу локальную машину, если они ещё не установлены.
 
-## Установка
+2) Клонируйте репозиторий вашего проекта.
 
-Может осуществляться при помощи:
-- [poetry](https://python-poetry.org)
-- [pip](https://pip.pypa.io/en/stable/) + [virtualenv](https://virtualenv.pypa.io/en/latest/)
+3) Перейдите в корневой каталог проекта.
 
+4) Запустите команду docker-compose up , чтобы создать и запустить контейнеры с приложением и базой данных.
 
-Если необхоодимо, обновите `pip`:
-```shell
-python -m pip install --upgrade pip
-```
+5) После успешного запуска приложение будет доступно по адресу http://localhost:8000.
 
-### Poetry
-
-Если необходимо, установите `poetry`:
-`pip install poetry`
-
-Установите зависимости приложения:
-```shell
-poetry install
-```
-
-### Pip
-
-Установите `virtualenv`:
-```shell
-pip install virtualenv
-```
-
-Создайте `virtualenv` и активируйте его:
-```shell
-virtualenv ve
-source ve/bin/activate
-```
-
-Установите зависимости приложения:
-```shell
-pip install -r requirements.txt
-```
-
-
-
-## Локальный запуск
-
-### Системные команды и тесты
-```shell
-python manage.py migrate
-python manage.py collectstatic
-python manage.py test
-```
-
-### Запуск development сервера:
-```shell
-python manage.py runserver
-```
-
-### Запуск gunicorn
-
-```shell
-gunicorn sampleproject.wsgi
-```
-
+6) Для выполнения миграций вручную, запустите команду docker-compose run migrations.
