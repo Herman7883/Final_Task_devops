@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+   
+kind: Ingress
+  
+metadata:
+  name: myapp-ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:   
+  rules:   
+    - host: zhg.dacdevops.ru
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: myapp-service
+                port:
+                  name: http
+
+  tls:
+    - hosts:
+      - zhg.dacdevops.ru
+      secretName: myapp-cert

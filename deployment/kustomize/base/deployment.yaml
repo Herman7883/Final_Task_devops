@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      initContainers:
+        - name: myapp-migrate
+          image: bob245567/myapp:latest
+          ports:
+            - containerPort: 8000
+          envFrom:
+            - secretRef:
+                name: myapp-postgres-secret
+          args:
+            - python
+            - manage.py
+            - migrate
+      containers:
+        - name: myapp
+          image: bob245567/myapp:latest
+          ports:
+            - containerPort: 8000
+          args: 
+            - python
+            - manage.py
+            - runserver
+            - 0.0.0.0:8000
+          envFrom:
+            - secretRef:
+                name: myapp-postgres-secret
