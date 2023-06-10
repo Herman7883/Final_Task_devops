@@ -9,7 +9,7 @@ resources:
   - namespace.yaml
 
 images:
-  - name: bob245567/myapp:latest
+  - name: bob245567/myapp:main
   - name: nginx
     newName: nginx
     newTag: 1.23.2-alpine
