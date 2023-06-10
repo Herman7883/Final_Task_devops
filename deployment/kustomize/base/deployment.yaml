@@ -6,11 +6,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: myapp
+      app: zgh-sampleapp
   template:
     metadata:
       labels:
-        app: myapp
+        app: zgh-sampleapp
     spec:
       initContainers:
         - name: myapp-migrate
@@ -25,7 +25,7 @@ spec:
             - manage.py
             - migrate
       containers:
-        - name: myapp
+        - name: zgh-sampleapp
           image: bob245567/myapp:latest
           ports:
             - containerPort: 8000
