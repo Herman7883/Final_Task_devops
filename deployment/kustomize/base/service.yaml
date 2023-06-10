@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: myapp-service
+  name: zgh-sampleapp-service
 spec:
   selector:
     app: zgh-sampleapp
