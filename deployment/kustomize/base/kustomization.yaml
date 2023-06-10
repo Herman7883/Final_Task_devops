@@ -10,4 +10,4 @@ resources:
   - ingress.yaml
 
 images:
-  - name: bob245567/myapp:latest
+  - name: bob245567/myapp:main
