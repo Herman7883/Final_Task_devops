@@ -4,7 +4,7 @@ metadata:
   name: myapp-certificate
 spec:
   dnsNames:
-  - 'zhg.dacdevops.ru'
+  - 'zgh.dacdevops.ru'
   issuerRef:
     kind: ClusterIssuer
     name: yc-clusterissuer
