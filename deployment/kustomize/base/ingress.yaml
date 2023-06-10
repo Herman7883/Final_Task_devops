@@ -8,7 +8,7 @@ metadata:
     kubernetes.io/ingress.class: "nginx"
 spec:   
   rules:   
-    - host: zhg.dacdevops.ru
+    - host: zgh.dacdevops.ru
       http:
         paths:
           - path: /
@@ -21,5 +21,5 @@ spec:
 
   tls:
     - hosts:
-      - zhg.dacdevops.ru
+      - zgh.dacdevops.ru
       secretName: myapp-cert
