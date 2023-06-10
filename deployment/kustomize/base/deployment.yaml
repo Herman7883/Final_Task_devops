@@ -14,7 +14,7 @@ spec:
     spec:
       initContainers:
         - name: myapp-migrate
-          image: bob245567/myapp:latest
+          image: bob245567/myapp:main
           ports:
             - containerPort: 8000
           envFrom:
@@ -26,7 +26,7 @@ spec:
             - migrate
       containers:
         - name: zgh-sampleapp
-          image: bob245567/myapp:latest
+          image: bob245567/myapp:main
           ports:
             - containerPort: 8000
           args: 

@@ -35,6 +35,6 @@ jobs:
       run: |
         docker push ${{ secrets.DOCKERHUB_USERNAME }}/myapp:${{ github.sha }}
         if [[ ${{ github.ref }} == 'refs/heads/main' ]]; then
-          docker tag ${{ secrets.DOCKERHUB_USERNAME }}/myapp:${{ github.sha }} ${{ secrets.DOCKERHUB_USERNAME }}/myapp:latest
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/myapp:latest
+          docker tag ${{ secrets.DOCKERHUB_USERNAME }}/myapp:${{ github.sha }} ${{ secrets.DOCKERHUB_USERNAME }}/myapp:main
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/myapp:main
         fi
