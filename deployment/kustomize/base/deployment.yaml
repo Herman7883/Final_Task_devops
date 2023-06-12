@@ -15,6 +15,7 @@ spec:
       initContainers:
         - name: zgh-sampleapp-migrate
           image: bob245567/myapp:main
+          imagePullPolicy: Always
           ports:
             - containerPort: 8000
           envFrom:
@@ -27,6 +28,7 @@ spec:
       containers:
         - name: zgh-sampleapp
           image: bob245567/myapp:main
+          imagePullPolicy: Always
           ports:
             - containerPort: 8000
           args: 
